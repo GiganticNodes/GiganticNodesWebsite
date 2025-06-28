@@ -3,6 +3,15 @@
 import { useEffect } from 'react';
 import dynamic from 'next/dynamic';
 
+// Type declarations for analytics
+declare global {
+  interface Window {
+    gtag: (...args: any[]) => void;
+    plausible: (event: string, options?: { url?: string }) => void;
+    dataLayer: any[];
+  }
+}
+
 // Isolate script that interacts with browser
 const AnalyticsScripts = dynamic(() => Promise.resolve(
   function AnalyticsScripts() {

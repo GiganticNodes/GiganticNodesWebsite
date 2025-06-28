@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { Suspense } from 'react';
 import { BlogList } from '@/components/blog/blog-list';
 import { Footer } from '@/components/footer';
 
@@ -21,7 +22,22 @@ export default function BlogPage() {
             validator services, and network developments.
           </p>
         </div>
-        <BlogList />
+        <Suspense fallback={
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[...Array(6)].map((_, i) => (
+              <div key={i} className="animate-pulse">
+                <div className="bg-gray-200 dark:bg-gray-800 h-48 rounded-t-2xl"></div>
+                <div className="p-6 space-y-3">
+                  <div className="h-4 bg-gray-200 dark:bg-gray-800 rounded w-20"></div>
+                  <div className="h-6 bg-gray-200 dark:bg-gray-800 rounded w-full"></div>
+                  <div className="h-4 bg-gray-200 dark:bg-gray-800 rounded w-3/4"></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        }>
+          <BlogList />
+        </Suspense>
       </div>
       <Footer />
     </div>

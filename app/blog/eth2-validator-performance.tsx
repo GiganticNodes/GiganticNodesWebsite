@@ -140,7 +140,7 @@ export default function Eth2ValidatorPerformance() {
       <ul className="space-y-3 ml-5">
         <li className="flex items-start">
           <span className="mr-2 text-accent font-bold">•</span>
-          <span><strong>Attestation Effectiveness:</strong> Target >99% inclusion in the earliest possible slot.</span>
+          <span><strong>Attestation Effectiveness:</strong> Target &gt;99% inclusion in the earliest possible slot.</span>
         </li>
         <li className="flex items-start">
           <span className="mr-2 text-accent font-bold">•</span>

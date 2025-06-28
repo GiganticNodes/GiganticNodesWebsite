@@ -132,6 +132,8 @@ export function Navbar() {
     if (activeIndex === -1 || !navItemRefs.current[activeIndex] || !navContainerRef.current) return 0;
     
     const activeElement = navItemRefs.current[activeIndex];
+    if (!activeElement) return 0;
+    
     const containerRect = navContainerRef.current.getBoundingClientRect();
     const activeRect = activeElement.getBoundingClientRect();
     
@@ -145,6 +147,8 @@ export function Navbar() {
     if (activeIndex === -1 || !navItemRefs.current[activeIndex]) return 0;
     
     const activeElement = navItemRefs.current[activeIndex];
+    if (!activeElement) return 0;
+    
     return activeElement.offsetWidth;
   };
 
