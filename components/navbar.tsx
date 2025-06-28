@@ -66,21 +66,21 @@ const MobileMenu = dynamic(() => Promise.resolve(({ isOpen, items, activeItem, s
                   {item.name}
                 </a>
               ) : (
-                <Link
-                  href={item.path}
-                  className={cn(
+              <Link
+                href={item.path}
+                className={cn(
                     'block px-4 py-3 rounded-full font-medium transition-all duration-200',
-                    activeItem === item.path
-                      ? 'dark:bg-[#2A2A2A] bg-slate-100 dark:text-white text-gray-900'
-                      : 'dark:text-white/70 text-gray-600 hover:dark:text-white hover:text-gray-900 hover:dark:bg-[#2A2A2A]/50 hover:bg-slate-100/70'
-                  )}
-                  onClick={() => {
-                    setActiveItem(item.path);
-                    onClose();
-                  }}
-                >
-                  {item.name}
-                </Link>
+                  activeItem === item.path
+                    ? 'dark:bg-[#2A2A2A] bg-slate-100 dark:text-white text-gray-900'
+                    : 'dark:text-white/70 text-gray-600 hover:dark:text-white hover:text-gray-900 hover:dark:bg-[#2A2A2A]/50 hover:bg-slate-100/70'
+                )}
+                onClick={() => {
+                  setActiveItem(item.path);
+                  onClose();
+                }}
+              >
+                {item.name}
+              </Link>
               )}
             </li>
           ))}
@@ -294,7 +294,7 @@ export function Navbar() {
                       <h1 className="font-heading text-3xl font-black preserve-heading">
               <span className="text-accent font-black">Gigantic</span>
               <span className="dark:text-white text-gray-900 font-black"> Nodes</span>
-            </h1>
+          </h1>
         </Link>
         
         {/* Desktop Navigation */}
@@ -315,7 +315,7 @@ export function Navbar() {
               
               <ul className="relative flex space-x-2">
                 {navItems.map((item, index) => (
-                  <li key={item.name}>
+                <li key={item.name}>
                     {item.external ? (
                       <a 
                         href={item.path}
@@ -329,7 +329,7 @@ export function Navbar() {
                         {item.name}
                       </a>
                     ) : (
-                      <Link 
+                  <Link 
                         ref={(el) => {
                           if (el) {
                             const nonExternalItems = navItems.filter(i => !i.external);
@@ -339,28 +339,28 @@ export function Navbar() {
                             }
                           }
                         }}
-                        href={item.path}
-                        className={cn(
+                    href={item.path}
+                    className={cn(
                           'px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 inline-block relative z-10',
-                          activeItem === item.path
+                      activeItem === item.path
                             ? 'dark:text-white text-gray-900' 
                             : 'dark:text-white/70 text-gray-600 hover:dark:text-white hover:text-gray-900'
-                        )}
-                        onClick={(e) => {
-                          if (item.path.includes('#')) {
-                            e.preventDefault();
-                            handleHashLinkClick(item.path);
-                          } else {
-                            setActiveItem(item.path);
-                          }
-                        }}
-                      >
-                        {item.name}
-                      </Link>
                     )}
-                  </li>
-                ))}
-              </ul>
+                    onClick={(e) => {
+                      if (item.path.includes('#')) {
+                        e.preventDefault();
+                        handleHashLinkClick(item.path);
+                      } else {
+                        setActiveItem(item.path);
+                      }
+                    }}
+                  >
+                    {item.name}
+                  </Link>
+                    )}
+                </li>
+              ))}
+            </ul>
             </div>
           </nav>
           

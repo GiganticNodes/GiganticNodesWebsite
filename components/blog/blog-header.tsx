@@ -74,7 +74,7 @@ export function BlogHeader() {
           onClick={() => setActiveItem('/')}
         >
           <h1 className="font-heading text-2xl font-black preserve-heading text-foreground">
-                          <span className="text-accent font-black">Gigantic</span> Nodes
+            <span className="text-accent font-black">Gigantic</span> Nodes
           </h1>
         </Link>
         

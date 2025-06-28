@@ -67,26 +67,26 @@ export function InfrastructureServices() {
              {/* Left Side - Service Content */}
              <div className="relative h-full flex flex-col justify-center py-4 order-1">
                {/* Header */}
-               <motion.div
-                 initial={{ opacity: 0, y: 20 }}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
                  animate={{ opacity: 1, y: 0 }}
                  className="mb-6 lg:mb-12"
-               >
+        >
                  <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-3 lg:mb-4 preserve-heading dark:text-white text-gray-900">
-                   Infrastructure <span className="text-accent font-black">Services</span>
-                 </h2>
+            Infrastructure <span className="text-accent font-black">Services</span>
+          </h2>
                  <p className="dark:text-white/70 text-gray-600 text-sm sm:text-base lg:text-lg">
-                   Our enterprise-grade infrastructure and technical expertise ensures optimal performance for your blockchain operations.
-                 </p>
-               </motion.div>
+            Our enterprise-grade infrastructure and technical expertise ensures optimal performance for your blockchain operations.
+          </p>
+        </motion.div>
 
                {/* Service Content - Changes based on scroll */}
                <div className="relative h-64 sm:h-72 lg:h-96">
                 {services.map((service, index) => (
-                  <motion.div
-                    key={service.id}
+              <motion.div
+                key={service.id}
                     className="absolute inset-0 flex flex-col justify-center"
-                    initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 20 }}
                     animate={{ 
                       opacity: activeIndex === index ? 1 : 0,
                       y: activeIndex === index ? 0 : 20,
@@ -107,10 +107,10 @@ export function InfrastructureServices() {
                            {service.description}
                          </p>
                        </div>
-                     </div>
-                     
+                    </div>
+                      
                      <div className="space-y-2 sm:space-y-3 lg:space-y-4">
-                      {service.features.map((feature, i) => (
+                        {service.features.map((feature, i) => (
                         <motion.div 
                           key={i} 
                           className="flex items-center"
@@ -130,12 +130,12 @@ export function InfrastructureServices() {
                              {feature}
                            </span>
                         </motion.div>
-                      ))}
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
+                        ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+          
                              {/* Progress Indicator */}
                <div className="flex space-x-2 sm:space-x-3 mt-4 lg:mt-8 justify-center lg:justify-start">
                  {services.map((_, index) => (
@@ -175,7 +175,7 @@ export function InfrastructureServices() {
                        <div className="h-full flex flex-col items-center justify-center text-center space-y-3 sm:space-y-4 lg:space-y-6">
                          
                          {/* Large Icon */}
-                         <motion.div 
+            <motion.div
                            className="rounded-2xl lg:rounded-3xl dark:bg-[#2A2A2A] bg-slate-100 p-3 sm:p-4 lg:p-6 xl:p-8"
                            animate={{ 
                              rotate: activeIndex === index ? [0, 5, -5, 0] : 0,
@@ -216,7 +216,7 @@ export function InfrastructureServices() {
                                  <div className="text-lg sm:text-xl lg:text-2xl font-bold text-accent">10Gb/s</div>
                                  <div className="text-xs sm:text-sm dark:text-white/60 text-gray-500">Bandwidth</div>
                                </div>
-                             </div>
+                  </div>
                            )}
 
                            {index === 2 && ( // Node Monitoring
@@ -224,12 +224,12 @@ export function InfrastructureServices() {
                                <div className="dark:bg-[#1A1A1A] bg-slate-50 rounded-lg lg:rounded-xl p-2 sm:p-3 lg:p-4">
                                  <div className="text-sm sm:text-base lg:text-xl xl:text-2xl font-bold text-accent">Real-time</div>
                                  <div className="text-xs sm:text-sm dark:text-white/60 text-gray-500">Alerts</div>
-                               </div>
+                        </div>
                                <div className="dark:bg-[#1A1A1A] bg-slate-50 rounded-lg lg:rounded-xl p-2 sm:p-3 lg:p-4">
                                  <div className="text-sm sm:text-base lg:text-xl xl:text-2xl font-bold text-accent">Multi-chain</div>
                                  <div className="text-xs sm:text-sm dark:text-white/60 text-gray-500">Support</div>
-                               </div>
-                             </div>
+                    </div>
+                  </div>
                            )}
 
                            {index === 3 && ( // Gigantic Dashboard
@@ -241,11 +241,11 @@ export function InfrastructureServices() {
                                <div className="dark:bg-[#1A1A1A] bg-slate-50 rounded-lg lg:rounded-xl p-2 sm:p-3 lg:p-4">
                                  <div className="text-sm sm:text-base lg:text-xl xl:text-2xl font-bold text-accent">Portfolio</div>
                                  <div className="text-xs sm:text-sm dark:text-white/60 text-gray-500">Tracking</div>
-                               </div>
-                             </div>
-                           )}
-                        </div>
-                      </div>
+                </div>
+              </div>
+          )}
+        </div>
+            </div>
                     </motion.div>
                   ))}
                 </div>
@@ -294,11 +294,11 @@ export function InfrastructureServices() {
                      ))}
                    </div>
                  </motion.div>
-               </div>
-             </div>
-           </div>
-         </div>
-       </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

@@ -25,17 +25,17 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     };
   }
   
-      return {
-      title: `${post.title} - Gigantic Nodes Blog`,
+  return {
+    title: `${post.title} - Gigantic Nodes Blog`,
+    description: post.excerpt,
+    openGraph: {
+      title: post.title,
       description: post.excerpt,
-      openGraph: {
-        title: post.title,
-        description: post.excerpt,
-        type: 'article',
-        publishedTime: post.date,
-        images: [post.image],
-      },
-    };
+      type: 'article',
+      publishedTime: post.date,
+      images: [post.image],
+    },
+  };
 }
 
 export function generateStaticParams() {
@@ -1385,7 +1385,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             </p>
             
             <p>
-                At Gigantic Nodes, we remain dedicated to advancing the state of validator operations and sharing our knowledge with the broader community. We believe that professional infrastructure providers play a crucial role in the blockchain ecosystem, and we're committed to setting the highest standards for reliability, security, and performance.
+              At Gigantic Nodes, we remain dedicated to advancing the state of validator operations and sharing our knowledge with the broader community. We believe that professional infrastructure providers play a crucial role in the blockchain ecosystem, and we're committed to setting the highest standards for reliability, security, and performance.
             </p>
                   </div>
             </div>

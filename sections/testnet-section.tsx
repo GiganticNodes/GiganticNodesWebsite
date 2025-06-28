@@ -283,7 +283,7 @@ export function TestnetSection() {
           ) : (
             <div className="col-span-1 md:col-span-2 lg:col-span-3 p-8 rounded-xl dark:bg-[#1E1E1E] bg-white dark:shadow-[-8px_-8px_16px_#060606,8px_8px_16px_#1E1E1E] shadow-md border dark:border-white/5 border-gray-200 text-center">
               <p className="dark:text-white/70 text-gray-600">No testnets found matching your criteria.</p>
-            </div>
+              </div>
           )}
         </div>
       </div>
