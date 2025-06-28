@@ -1,0 +1,354 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer base {
+  :root {
+    /* Light mode colors */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 12%;
+    --primary: 0 0% 12%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 12%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 20 100% 58%; /* #FF6B2C in HSL */
+    --accent-foreground: 0 0% 12%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    /* Dark mode colors - keeping original dark theme */
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 20 100% 58%; /* #FF6B2C in HSL */
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Source Sans Pro styling for better readability */
+  .font-sourcesans {
+    letter-spacing: 0.01em;
+    font-weight: 400;
+  }
+
+  p, span, li, a, button, input, textarea, table, div {
+    @apply font-sourcesans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sourcesans font-bold;
+  }
+
+  /* Font heading specific styles */
+  .font-heading {
+    font-weight: 900 !important;
+  }
+
+  /* Preserved heading styles for specific sections */
+  .preserve-heading {
+    @apply font-heading !important;
+  }
+  
+  .preserve-heading * {
+    @apply font-heading !important;
+  }
+
+  /* Main headings with the preserve-heading class should be extra bold */
+  h1.preserve-heading, 
+  h2.preserve-heading, 
+  h3.preserve-heading {
+    @apply font-black !important;
+  }
+  
+  /* Fix for orange text in headings */
+  .text-\[\#FF6B2C\] {
+    color: #FF6B2C;
+    font-weight: 900 !important;
+  }
+  
+  /* Enhance accent text without causing circular dependencies */
+  .text-accent {
+    font-weight: 900 !important;
+  }
+  
+  /* Specifically target headings with orange text */
+  h1 .text-\[\#FF6B2C\], 
+  h2 .text-\[\#FF6B2C\], 
+  h3 .text-\[\#FF6B2C\],
+  h1 .text-accent,
+  h2 .text-accent,
+  h3 .text-accent {
+    font-weight: 900 !important;
+  }
+
+  /* Blog article styling for better readability */
+  .prose {
+    @apply mx-auto text-foreground/90;
+    font-size: 1.075rem;
+    line-height: 1.75;
+  }
+  
+  .prose p {
+    @apply my-6 leading-relaxed;
+  }
+  
+  .prose h2 {
+    @apply text-2xl mt-12 mb-6 text-foreground font-bold;
+    letter-spacing: -0.015em;
+  }
+  
+  .prose h3 {
+    @apply text-xl mt-10 mb-4 text-foreground font-bold;
+    letter-spacing: -0.015em;
+  }
+  
+  .prose strong {
+    @apply font-bold text-foreground;
+  }
+  
+  .prose ul {
+    @apply my-6 pl-6 space-y-3;
+  }
+  
+  .prose ol {
+    @apply my-6 pl-6 space-y-3;
+  }
+  
+  .prose li {
+    @apply pl-2;
+  }
+  
+  .prose li::marker {
+    @apply text-foreground/60;
+  }
+  
+  .prose pre {
+    @apply my-8 p-4 rounded-lg overflow-x-auto bg-black/5 dark:bg-white/5 text-sm;
+  }
+  
+  .prose code {
+    @apply font-mono text-sm px-1 py-0.5 rounded bg-black/5 dark:bg-white/5;
+  }
+  
+  .prose pre code {
+    @apply p-0 bg-transparent;
+  }
+  
+  .prose blockquote {
+    @apply pl-4 border-l-4 border-accent/30 italic my-6 text-foreground/70;
+  }
+  
+  .prose a {
+    @apply text-accent hover:text-accent/80 font-medium underline underline-offset-2 transition-colors;
+  }
+  
+  .prose img {
+    @apply rounded-lg my-8 shadow-md;
+  }
+  
+  /* End of blog article styling */
+
+  /* Mode-specific styles */
+  /* Background overrides */
+  .light .bg-\[\#0A0A0A\] {
+    @apply bg-white;
+  }
+
+  .light .bg-\[\#1E1E1E\] {
+    @apply bg-white;
+  }
+  
+  .light .bg-\[\#1A1A1A\] {
+    @apply bg-slate-50;
+  }
+
+  .light .bg-\[\#2A2A2A\] {
+    @apply bg-slate-100;
+  }
+
+  /* Text color overrides to ensure visibility */
+  .light .text-white {
+    @apply text-gray-900;
+  }
+  
+  .light .text-white\/70,
+  .light .text-white\/60,
+  .light .text-white\/50 {
+    @apply text-gray-600;
+  }
+  
+  /* Border color fixes */
+  .light .border-white\/5,
+  .light .border-white\/10 {
+    @apply border-gray-200;
+  }
+  
+  /* Box shadow fixes */
+  .light .shadow-\[-8px_-8px_16px_#060606\,8px_8px_16px_#1E1E1E\],
+  .light .shadow-\[-6px_-6px_12px_#060606\,6px_6px_12px_#1E1E1E\] {
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  }
+
+  .light .hover\:shadow-\[-12px_-12px_20px_#060606\,12px_12px_20px_#1E1E1E\]:hover,
+  .light .hover\:shadow-\[-8px_-8px_16px_#060606\,8px_8px_16px_#1E1E1E\]:hover {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+  
+  /* Background gradients */
+  .light .bg-gradient-to-b.from-\[\#1E1E1E\].to-\[\#1a1a1a\] {
+    background-image: linear-gradient(to bottom, white, #F8FAFC);
+  }
+  
+  .light .bg-gradient-to-r.from-\[\#1E1E1E\].to-\[\#2A2A2A\] {
+    background-image: linear-gradient(to right, white, #F1F5F9);
+  }
+  
+  /* Button styles */
+  .light .bg-\[\#FF6B2C\] {
+    @apply bg-accent;
+  }
+  
+  .light .hover\:bg-\[\#FF8F2C\]:hover {
+    @apply hover:bg-amber-500;
+  }
+  
+  .light .bg-\[\#2A2A2A\]\/30 {
+    @apply bg-slate-100;
+  }
+  
+  /* Fix for badges and status indicators */
+  .light .bg-lime-500\/90 {
+    @apply bg-lime-500;
+  }
+  
+  .light .bg-amber-600\/20 {
+    @apply bg-amber-100;
+  }
+  
+  .light .bg-blue-600\/20 {
+    @apply bg-blue-100;
+  }
+  
+  .light .text-amber-400 {
+    @apply text-amber-600;
+  }
+  
+  .light .text-blue-400 {
+    @apply text-blue-600;
+  }
+  
+  /* Fix for any code blocks or pre-formatted text */
+  .light pre, 
+  .light code {
+    @apply bg-slate-100 text-gray-900;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  /* Achievement dot alignment fix */
+  .achievement-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-top: 6px;
+    background-color: hsl(var(--accent));
+    flex-shrink: 0;
+  }
+
+  .achievement-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+
+  .achievement-text {
+    flex: 1;
+    display: inline-block;
+    position: relative;
+    top: -1px;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
