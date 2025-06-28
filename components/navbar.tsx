@@ -18,7 +18,7 @@ const navItems: NavItem[] = [
   { name: 'Services', path: '/#services' },
   { name: 'Testnets', path: '/#testnets' },
   { name: 'Blog', path: '/blog' },
-  { name: 'Explorer', path: 'https://explorer.giganticvalidator.com', external: true },
+  { name: 'Explorer', path: 'https://explorer.giganticnodes.com', external: true },
   { name: 'Contact', path: '/#footer-contact' },
 ];
 
