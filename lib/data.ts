@@ -205,7 +205,7 @@ export const testnets: Testnet[] = [
     startDate: '2022-07-01',
     endDate: '2022-09-01',
     Contributors: [
-      'Maintained node uptime at 99.8%',
+      'Maintained node uptime at 99.9%',
       'Operated IBC relayer channel between Stride and GAIA',
       'Executed staking, redeeming, and claiming processes, including 6-hour unbonding mechanism',
       'Implemented relayer with Go Relayer v2',

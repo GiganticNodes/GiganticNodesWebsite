@@ -159,7 +159,7 @@ export function HeroSection() {
             </div>
             <div className="flex items-center space-x-6 pt-4">
               <div>
-                <p className="text-3xl font-bold font-heading">99.8%</p>
+                <p className="text-3xl font-bold font-heading">99.9%</p>
                 <p className="dark:text-white/60 text-gray-600 text-sm">Uptime</p>
               </div>
               <div className="h-12 w-px dark:bg-white/20 bg-gray-300"></div>
